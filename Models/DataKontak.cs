@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace KReenRegistration.Models
@@ -15,6 +15,6 @@ namespace KReenRegistration.Models
         public ushort KodeKabupatenKota { get; set; }
         public string KodePos { get; set; }
 
-        public virtual KabupatenKota KodeKabupatenKotaNavigation { get; set; }
+        public virtual KabupatenKota KabupatenKotaNavigation { get; set; }
     }
 }

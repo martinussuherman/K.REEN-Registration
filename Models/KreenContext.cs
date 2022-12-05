@@ -90,7 +90,7 @@ namespace KReenRegistration.Models
 
                 entity.Property(e => e.TanggalLahir).HasDefaultValueSql("'1900-01-01'");
 
-                entity.HasOne(d => d.KodeKabupatenKotaNavigation)
+                entity.HasOne(d => d.KabupatenKotaNavigation)
                     .WithMany(p => p.DataKontak)
                     .HasForeignKey(d => d.KodeKabupatenKota)
                     .OnDelete(DeleteBehavior.ClientSetNull)
