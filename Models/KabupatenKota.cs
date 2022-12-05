@@ -11,10 +11,10 @@ namespace KReenRegistration.Models
         }
 
         public ushort Kode { get; set; }
-        public string Nama { get; set; }
+        public string Nama { get; set; } = string.Empty;
         public byte KodeProvinsi { get; set; }
 
-        public virtual Provinsi ProvinsiNavigation { get; set; }
+        public virtual Provinsi? ProvinsiNavigation { get; set; }
         public virtual ICollection<DataKontak> DataKontak { get; set; }
     }
 }
