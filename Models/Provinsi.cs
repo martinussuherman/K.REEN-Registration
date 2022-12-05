@@ -11,7 +11,7 @@ namespace KReenRegistration.Models
         }
 
         public byte Kode { get; set; }
-        public string Nama { get; set; }
+        public string Nama { get; set; } = string.Empty;
 
         public virtual ICollection<KabupatenKota> KabupatenKota { get; set; }
     }
