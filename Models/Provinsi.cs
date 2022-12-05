@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 
 namespace KReenRegistration.Models
@@ -7,12 +7,12 @@ namespace KReenRegistration.Models
     {
         public Provinsi()
         {
-            Kabupatenkota = new HashSet<KabupatenKota>();
+            KabupatenKota = new HashSet<KabupatenKota>();
         }
 
         public byte Kode { get; set; }
         public string Nama { get; set; }
 
-        public virtual ICollection<KabupatenKota> Kabupatenkota { get; set; }
+        public virtual ICollection<KabupatenKota> KabupatenKota { get; set; }
     }
 }

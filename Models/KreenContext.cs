@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
@@ -118,7 +118,7 @@ namespace KReenRegistration.Models
                     .HasDefaultValueSql("''");
 
                 entity.HasOne(d => d.KodeProvinsiNavigation)
-                    .WithMany(p => p.Kabupatenkota)
+                    .WithMany(p => p.KabupatenKota)
                     .HasForeignKey(d => d.KodeProvinsi)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_kabupaten_kota_provinsi");
