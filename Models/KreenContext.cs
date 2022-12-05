@@ -117,7 +117,7 @@ namespace KReenRegistration.Models
                     .HasColumnType("tinytext")
                     .HasDefaultValueSql("''");
 
-                entity.HasOne(d => d.KodeProvinsiNavigation)
+                entity.HasOne(d => d.ProvinsiNavigation)
                     .WithMany(p => p.KabupatenKota)
                     .HasForeignKey(d => d.KodeProvinsi)
                     .OnDelete(DeleteBehavior.ClientSetNull)
