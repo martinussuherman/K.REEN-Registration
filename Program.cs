@@ -1,9 +1,12 @@
+using KReenRegistration.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
+using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+ConfigureDatabase(builder);
 ConfigureAuthentication(builder);
 
 builder.Services.AddAuthorization();
@@ -31,6 +34,17 @@ app.MapRazorPages();
 
 app.Run();
 
+
+void ConfigureDatabase(WebApplicationBuilder builder)
+{
+    string connection = builder.Configuration.GetConnectionString("MySql");
+    builder.Services.AddDbContextPool<KreenContext>(
+        options => options.UseMySql(
+            connection,
+            ServerVersion.AutoDetect(connection),
+            sqlOptions => sqlOptions.EnableRetryOnFailure(10, TimeSpan.FromSeconds(30), null)),
+        16);
+}
 
 void ConfigureAuthentication(WebApplicationBuilder builder)
 {
