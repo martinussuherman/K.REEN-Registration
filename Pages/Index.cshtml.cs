@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
-namespace K.REEN_Registration.Pages;
+namespace KReenRegistration.Pages;
 
 public class IndexModel : PageModel
 {
