@@ -7,10 +7,6 @@ namespace KReenRegistration.Models
 {
     public partial class KreenContext : DbContext
     {
-        public KreenContext()
-        {
-        }
-
         public KreenContext(DbContextOptions<KreenContext> options)
             : base(options)
         {
