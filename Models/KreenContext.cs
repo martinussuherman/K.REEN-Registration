@@ -12,11 +12,11 @@ namespace KReenRegistration.Models
         {
         }
 
-        public virtual DbSet<DataAffiliate> Dataaffiliates { get; set; }
-        public virtual DbSet<DataKontak> Datakontaks { get; set; }
-        public virtual DbSet<KabupatenKota> Kabupatenkota { get; set; }
-        public virtual DbSet<KirimWAMintaAlamat> Kirimwamintaalamats { get; set; }
-        public virtual DbSet<Provinsi> Provinsis { get; set; }
+        public virtual DbSet<DataAffiliate> DataAffiliate { get; set; }
+        public virtual DbSet<DataKontak> DataKontak { get; set; }
+        public virtual DbSet<KabupatenKota> KabupatenKota { get; set; }
+        public virtual DbSet<KirimWAMintaAlamat> KirimWAMintaAlamat { get; set; }
+        public virtual DbSet<Provinsi> Provinsi { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
