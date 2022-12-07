@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
@@ -134,7 +134,7 @@ namespace KReenRegistration.Models
 
                 entity.Property(e => e.WaSent).HasColumnType("tinyint(4) unsigned");
 
-                entity.HasOne(d => d.IdNavigation)
+                entity.HasOne(d => d.DataKontakNavigation)
                     .WithMany()
                     .HasForeignKey(d => d.Id)
                     .OnDelete(DeleteBehavior.ClientSetNull)
