@@ -1,3 +1,4 @@
+using KReenRegistration.Misc;
 using KReenRegistration.Models;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
@@ -11,6 +12,7 @@ ConfigureAuthentication(builder);
 
 builder.Services.AddAuthorization();
 builder.Services.AddRazorPages();
+builder.Services.AddAutoMapper(typeof(MappingProfile));
 
 var app = builder.Build();
 
