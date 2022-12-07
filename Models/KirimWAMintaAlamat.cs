@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace KReenRegistration.Models
+﻿namespace KReenRegistration.Models
 {
     public partial class KirimWAMintaAlamat
     {
