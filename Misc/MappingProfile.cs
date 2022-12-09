@@ -15,6 +15,7 @@ namespace KReenRegistration.Misc
         public MappingProfile()
         {
             CreateMap<Provinsi, ProvinsiView>();
+            CreateMap<KabupatenKota, KabupatenKotaView>();
         }
     }
 }
