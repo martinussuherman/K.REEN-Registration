@@ -4,3 +4,5 @@ obj/**
 .vscode/**
 log/**
 wwwroot/lib/**
+node_modules/**
+pnpm-lock.yaml
