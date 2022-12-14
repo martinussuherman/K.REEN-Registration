@@ -22,9 +22,10 @@ namespace KReenRegistration.Controllers
         public async Task<List<ProvinsiView>> Provinsi()
         {
             return await _context.Provinsi
-               .AsNoTracking()
-               .ProjectTo<ProvinsiView>(_mapper.ConfigurationProvider)
-               .ToListAsync();
+                .Where(p => p.Kode != 0)
+                .AsNoTracking()
+                .ProjectTo<ProvinsiView>(_mapper.ConfigurationProvider)
+                .ToListAsync();
         }
 
         [HttpGet(nameof(KabupatenKota))]
