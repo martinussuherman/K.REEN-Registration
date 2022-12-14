@@ -36,6 +36,17 @@ namespace KReenRegistration.Controllers
                .ProjectTo<KabupatenKotaView>(_mapper.ConfigurationProvider)
                .ToListAsync();
         }
+        [HttpGet(nameof(KabupatenKotaByProvinsi))]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public async Task<List<KabupatenKotaView>> KabupatenKotaByProvinsi(byte kodeProvinsi)
+        {
+            return await _context.KabupatenKota
+                .Where(k => k.KodeProvinsi == kodeProvinsi)
+                .AsNoTracking()
+                .ProjectTo<KabupatenKotaView>(_mapper.ConfigurationProvider)
+                .ToListAsync();
+        }
+
 
         private readonly KreenContext _context;
         private readonly IMapper _mapper;
