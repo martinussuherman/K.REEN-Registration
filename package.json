@@ -1,0 +1,10 @@
+{
+   "name": "kreen-registration-js",
+   "version": "1.0.0",
+   "private": true,
+   "devDependencies": {
+      "@types/jquery": "^3.5.5",
+      "axios": "^1.2.1",
+      "flatpickr": "^4.6.13"
+   }
+}
