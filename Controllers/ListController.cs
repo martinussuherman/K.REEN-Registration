@@ -33,10 +33,11 @@ namespace KReenRegistration.Controllers
         public async Task<List<KabupatenKotaView>> KabupatenKota()
         {
             return await _context.KabupatenKota
-               .AsNoTracking()
-               .ProjectTo<KabupatenKotaView>(_mapper.ConfigurationProvider)
-               .ToListAsync();
+                .AsNoTracking()
+                .ProjectTo<KabupatenKotaView>(_mapper.ConfigurationProvider)
+                .ToListAsync();
         }
+
         [HttpGet(nameof(KabupatenKotaByProvinsi))]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<List<KabupatenKotaView>> KabupatenKotaByProvinsi(byte kodeProvinsi)
@@ -47,7 +48,6 @@ namespace KReenRegistration.Controllers
                 .ProjectTo<KabupatenKotaView>(_mapper.ConfigurationProvider)
                 .ToListAsync();
         }
-
 
         private readonly KreenContext _context;
         private readonly IMapper _mapper;
