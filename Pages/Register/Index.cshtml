@@ -1,0 +1,168 @@
+@page
+@model IndexModel
+
+@{
+   Layout = "_BlankLayout";
+}
+
+<div class="card-body mt-5">
+   <form method="post" class="row g-3 needs-validation" id="registerForm" novalidate>
+      <div class="col-md-6">
+         <label class="form-label">Nama Lengkap</label>
+         <input type="text" class="form-control" required>
+
+         <div class="valid-feedback">
+            Isian anda sudah sesuai!
+         </div>
+
+         <div class="invalid-feedback">
+            Mohon isi nama lengkap anda.
+         </div>
+      </div>
+
+      <div class="col-md-6">
+         <label class="form-label">Nomor HP</label>
+         <input type="tel" class="form-control" required>
+
+         <div class="valid-feedback">
+            Isian anda sudah sesuai!
+         </div>
+
+         <div class="invalid-feedback">
+            Mohon isi nomor hp anda.
+         </div>
+      </div>
+
+      <div class="col-md-4">
+         <label class="form-label">Tanggal Lahir</label>
+         <input type="date" class="form-control" id="tanggalLahir" required>
+
+         <div class="valid-feedback">
+            Isian anda sudah sesuai!
+         </div>
+
+         <div class="invalid-feedback">
+            Mohon isi tanggal lahir anda.
+         </div>
+      </div>
+
+      <div class="col-md-4">
+         <label class="form-label">Email</label>
+         <input type="email" class="form-control" required>
+
+         <div class="valid-feedback">
+            Isian anda sudah sesuai!
+         </div>
+
+         <div class="invalid-feedback">
+            Mohon isi email anda.
+         </div>
+      </div>
+
+      <div class="col-md-4">
+         <label class="form-label">Jenis Kelamin</label>
+
+         <div class="form-group">
+            <div class="form-check form-check-inline">
+               <input class="form-check-input" type="radio" value="L" required>
+               <label class="form-check-label">Pria</label>
+            </div>
+
+            <div class="form-check form-check-inline">
+               <input class="form-check-input" type="radio" value="P" required>
+               <label class="form-check-label">Wanita</label>
+            </div>
+         </div>
+
+         <div class="valid-feedback">
+            Isian anda sudah sesuai!
+         </div>
+
+         <div class="invalid-feedback">
+            Mohon isi jenis kelamin anda.
+         </div>
+      </div>
+
+      <div class="col-md-12">
+         <label class="form-label">Alamat Lengkap</label>
+         <input type="text" class="form-control" required>
+
+         <div class="valid-feedback">
+            Isian anda sudah sesuai!
+         </div>
+
+         <div class="invalid-feedback">
+            Mohon isi alamat lengkap anda.
+         </div>
+      </div>
+
+      <div class="col-md-4">
+         <label class="form-label">Provinsi</label>
+
+         <select class="form-select" id="provinsi" required>
+            <option selected disabled value="">Silahkan pilih ...</option>
+         </select>
+
+         <div class="valid-feedback">
+            Isian anda sudah sesuai!
+         </div>
+
+         <div class="invalid-feedback">
+            Mohon isi provinsi tempat anda tinggal.
+         </div>
+      </div>
+
+      <div class="col-md-4">
+         <label class="form-label">Kabupaten/Kota</label>
+
+         <select class="form-select" id="kabupatenKota" required>
+            <option selected disabled value="">Silahkan pilih ...</option>
+         </select>
+
+         <div class="valid-feedback">
+            Isian anda sudah sesuai!
+         </div>
+
+         <div class="invalid-feedback">
+            Mohon isi kabupaten/kota tempat anda tinggal.
+         </div>
+      </div>
+
+      <div class="col-md-4">
+         <label class="form-label">Kode Pos</label>
+         <input type="text" class="form-control" required>
+
+         <div class="valid-feedback">
+            Isian anda sudah sesuai!
+         </div>
+
+         <div class="invalid-feedback">
+            Mohon isi kode pos tempat anda tinggal.
+         </div>
+      </div>
+
+      <div class="col-12">
+         <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" required>
+            <label class="form-check-label">
+               Dengan ini saya setuju untuk memberikan izin bagi K.REEN untuk menggunakan informasi yang telah saya isi dalam formulir ini untuk mengirimkan kepada saya Email/WA mengenai Pembaruan/<em>Updates</em>, Berita/<em>Newsletter</em> serta Informasi Marketing dan Promosi lainnya.
+            </label>
+            <div class="invalid-feedback">
+               Mohon isi persetujuan anda.
+            </div>
+         </div>
+      </div>
+
+      <div class="col-12">
+         <button class="btn btn-primary" type="submit">Kirim</button>
+      </div>
+   </form>
+</div>
+
+@section Styles
+{
+}
+
+@section Scripts
+{
+}
