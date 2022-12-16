@@ -172,15 +172,15 @@
    integrity="sha512-K/oyQtMXpxI4+K0W7H25UopjM8pzq0yrVdFdG21Fh5dBe91I40pDd9A4lzNlHPHBIP2cwZuoxaUSX0GJSObvGA=="
    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-   <script>
-      (function () {
-         "use strict";
-         let registerForm = document.getElementById("registerForm");
-         addFormSubmitListener(registerForm);
-         let picker = flatpickr("#tanggalLahir", {
-            altInput: true,
-            onValueUpdate: flatpickrValidateRequired,
-         });
-      })();
-   </script>
+<script>
+   (function () {
+      "use strict";
+      let registerForm = document.getElementById("registerForm");
+      addFormSubmitListener(registerForm);
+      let picker = flatpickr("#tanggalLahir", {
+         altInput: true,
+         onValueUpdate: flatpickrValidateRequired,
+      });
+   })();
+</script>
 }
