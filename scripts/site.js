@@ -2,7 +2,7 @@ import flatpickr from "flatpickr";
 (function () {
     "use strict";
     let registerForm = document.getElementById("registerForm");
-    addFormSubmitListener(registerForm);
+    addFormSubmitListener(registerForm, triggerInputChangeEvent);
     let today = new Date();
     let picker = flatpickr("#tanggalLahir", {
         altInput: true,

@@ -5,7 +5,7 @@ import HTMLElement from "flatpickr/dist/types/globals";
     "use strict";
 
     let registerForm = document.getElementById("registerForm") as HTMLFormElement;
-    addFormSubmitListener(registerForm);
+    addFormSubmitListener(registerForm, triggerInputChangeEvent);
 
     let today = new Date();
     let picker = flatpickr(
