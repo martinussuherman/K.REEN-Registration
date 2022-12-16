@@ -1,4 +1,5 @@
 import flatpickr from "flatpickr";
+import HTMLElement from "flatpickr/dist/types/globals";
 
 (function () {
     "use strict";
@@ -53,4 +54,21 @@ function flatpickrValidateRequired(
     self.input.classList.remove("is-invalid");
     self.altInput?.classList.add("is-valid");
     self.altInput?.classList.remove("is-invalid");
+}
+
+function triggerInputChangeEvent() {
+    let picker = (document.getElementById("tanggalLahir") as HTMLElement)._flatpickr;
+    picker?.updateValue(true);
+
+    let inputList = document.getElementsByClassName("form-check-input") as HTMLCollectionOf<HTMLInputElement>;
+
+    Array
+        .prototype
+        .slice
+        .call(inputList)
+        .forEach(function (input: HTMLInputElement) {
+            if (input.type == "radio") {
+                input.dispatchEvent(new Event("change"));
+            }
+        });
 }

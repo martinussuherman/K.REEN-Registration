@@ -39,3 +39,17 @@ function flatpickrValidateRequired(dates, currentDateString, self, data) {
     self.altInput?.classList.add("is-valid");
     self.altInput?.classList.remove("is-invalid");
 }
+function triggerInputChangeEvent() {
+    let picker = document.getElementById("tanggalLahir")._flatpickr;
+    picker?.updateValue(true);
+    let inputList = document.getElementsByClassName("form-check-input");
+    Array
+        .prototype
+        .slice
+        .call(inputList)
+        .forEach(function (input) {
+        if (input.type == "radio") {
+            input.dispatchEvent(new Event("change"));
+        }
+    });
+}
