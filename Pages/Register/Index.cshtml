@@ -9,7 +9,7 @@
    <form method="post" class="row g-3 needs-validation" id="registerForm" novalidate>
       <div class="col-md-6">
          <label class="form-label">Nama Lengkap</label>
-         <input type="text" class="form-control" required>
+         <input type="text" asp-for="PostModel.Nama" class="form-control" required>
 
          <div class="valid-feedback">
             Isian anda sudah sesuai!
@@ -22,7 +22,7 @@
 
       <div class="col-md-6">
          <label class="form-label">Nomor HP</label>
-         <input type="tel" class="form-control" required>
+         <input type="tel" asp-for="PostModel.NomorHp" class="form-control" required>
 
          <div class="valid-feedback">
             Isian anda sudah sesuai!
@@ -35,7 +35,7 @@
 
       <div class="col-md-4">
          <label class="form-label">Tanggal Lahir</label>
-         <input type="date" class="form-control" id="tanggalLahir" required>
+         <input class="form-control" asp-for="PostModel.TanggalLahir" id="tanggalLahir" required>
 
          <div class="valid-feedback">
             Isian anda sudah sesuai!
@@ -48,7 +48,7 @@
 
       <div class="col-md-4">
          <label class="form-label">Email</label>
-         <input type="email" class="form-control" required>
+         <input type="email" class="form-control" asp-for="PostModel.Email" required>
 
          <div class="valid-feedback">
             Isian anda sudah sesuai!
@@ -64,12 +64,12 @@
 
          <div class="form-group">
             <div class="form-check form-check-inline">
-               <input class="form-check-input" type="radio" value="L" required>
+               <input class="form-check-input" type="radio" asp-for="PostModel.JenisKelamin" value="L" required>
                <label class="form-check-label">Pria</label>
             </div>
 
             <div class="form-check form-check-inline">
-               <input class="form-check-input" type="radio" value="P" required>
+               <input class="form-check-input" type="radio" asp-for="PostModel.JenisKelamin" value="P" required>
                <label class="form-check-label">Wanita</label>
             </div>
          </div>
@@ -85,7 +85,7 @@
 
       <div class="col-md-12">
          <label class="form-label">Alamat Lengkap</label>
-         <input type="text" class="form-control" required>
+         <input type="text" asp-for="PostModel.Alamat" class="form-control" required>
 
          <div class="valid-feedback">
             Isian anda sudah sesuai!
@@ -99,7 +99,7 @@
       <div class="col-md-4">
          <label class="form-label">Provinsi</label>
 
-         <select class="form-select" id="provinsi" required>
+         <select class="form-select" asp-for="PostModel.KodeProvinsi" id="provinsi" required>
             <option selected disabled value="">Silahkan pilih ...</option>
          </select>
 
@@ -115,7 +115,7 @@
       <div class="col-md-4">
          <label class="form-label">Kabupaten/Kota</label>
 
-         <select class="form-select" id="kabupatenKota" required>
+         <select class="form-select" asp-for="PostModel.KodeKabupatenKota" id="kabupatenKota" required>
             <option selected disabled value="">Silahkan pilih ...</option>
          </select>
 
@@ -130,7 +130,7 @@
 
       <div class="col-md-4">
          <label class="form-label">Kode Pos</label>
-         <input type="text" class="form-control" required>
+         <input type="text" class="form-control" asp-for="PostModel.KodePos" required>
 
          <div class="valid-feedback">
             Isian anda sudah sesuai!
