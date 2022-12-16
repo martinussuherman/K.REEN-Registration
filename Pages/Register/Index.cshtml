@@ -180,7 +180,7 @@
       let today = new Date();
       let picker = flatpickr("#tanggalLahir", {
          altInput: true,
-         onValueUpdate: flatpickrValidateRequired,
+         onValueUpdate: flatpickrUpdateValidStatus,
          minDate: new Date(1940, 1, 1),
          maxDate: new Date(today.getFullYear() - 7, today.getMonth(), today.getDay())
       });

@@ -13,7 +13,7 @@ function addFormSubmitListener(form, hook) {
         form.classList.add("was-validated");
     }, false);
 }
-function flatpickrValidateRequired(dates, currentDateString, self, data) {
+function flatpickrUpdateValidStatus(dates, currentDateString, self, data) {
     if (self.input.validity.valid) {
         self.input.classList.add("is-valid");
         self.input.classList.remove("is-invalid");

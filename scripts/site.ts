@@ -12,7 +12,7 @@ import HTMLElement from "flatpickr/dist/types/globals";
         "#tanggalLahir",
         {
             altInput: true,
-            onValueUpdate: flatpickrValidateRequired,
+            onValueUpdate: flatpickrUpdateValidStatus,
             minDate: new Date(1940, 1, 1),
             maxDate: new Date(today.getFullYear() - 7, today.getMonth(), today.getDay())
         });
@@ -33,7 +33,7 @@ function addFormSubmitListener(form: HTMLFormElement, hook?: () => void) {
     }, false);
 }
 
-function flatpickrValidateRequired(
+function flatpickrUpdateValidStatus(
     dates: Date[],
     currentDateString: string,
     self: flatpickr.Instance,

@@ -6,7 +6,7 @@ import flatpickr from "flatpickr";
     let today = new Date();
     let picker = flatpickr("#tanggalLahir", {
         altInput: true,
-        onValueUpdate: flatpickrValidateRequired,
+        onValueUpdate: flatpickrUpdateValidStatus,
         minDate: new Date(1940, 1, 1),
         maxDate: new Date(today.getFullYear() - 7, today.getMonth(), today.getDay())
     });
@@ -23,7 +23,7 @@ function addFormSubmitListener(form, hook) {
         form.classList.add("was-validated");
     }, false);
 }
-function flatpickrValidateRequired(dates, currentDateString, self, data) {
+function flatpickrUpdateValidStatus(dates, currentDateString, self, data) {
     if (self.input.validity.valid) {
         self.input.classList.add("is-valid");
         self.input.classList.remove("is-invalid");
