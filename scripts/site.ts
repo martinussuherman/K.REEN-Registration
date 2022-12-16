@@ -5,6 +5,13 @@ import flatpickr from "flatpickr";
 
     let registerForm = document.getElementById("registerForm") as HTMLFormElement;
     addFormSubmitListener(registerForm);
+
+    let picker = flatpickr(
+        "#tanggalLahir",
+        {
+            altInput: true,
+            onValueUpdate: flatpickrValidateRequired,
+        });
 })();
 
 function addFormSubmitListener(form: HTMLFormElement, hook?: () => void) {

@@ -177,6 +177,10 @@
          "use strict";
          let registerForm = document.getElementById("registerForm");
          addFormSubmitListener(registerForm);
+         let picker = flatpickr("#tanggalLahir", {
+            altInput: true,
+            onValueUpdate: flatpickrValidateRequired,
+         });
       })();
    </script>
 }

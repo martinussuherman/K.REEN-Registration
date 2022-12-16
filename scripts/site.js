@@ -1,7 +1,12 @@
+import flatpickr from "flatpickr";
 (function () {
     "use strict";
     let registerForm = document.getElementById("registerForm");
     addFormSubmitListener(registerForm);
+    let picker = flatpickr("#tanggalLahir", {
+        altInput: true,
+        onValueUpdate: flatpickrValidateRequired,
+    });
 })();
 function addFormSubmitListener(form, hook) {
     form.addEventListener("submit", function (event) {
@@ -31,4 +36,3 @@ function flatpickrValidateRequired(dates, currentDateString, self, data) {
     self.altInput?.classList.add("is-valid");
     self.altInput?.classList.remove("is-invalid");
 }
-export {};
