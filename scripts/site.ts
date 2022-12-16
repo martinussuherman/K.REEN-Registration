@@ -6,11 +6,14 @@ import flatpickr from "flatpickr";
     let registerForm = document.getElementById("registerForm") as HTMLFormElement;
     addFormSubmitListener(registerForm);
 
+    let today = new Date();
     let picker = flatpickr(
         "#tanggalLahir",
         {
             altInput: true,
             onValueUpdate: flatpickrValidateRequired,
+            minDate: new Date(1940, 1, 1),
+            maxDate: new Date(today.getFullYear() - 7, today.getMonth(), today.getDay())
         });
 })();
 
