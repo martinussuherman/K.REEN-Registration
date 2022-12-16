@@ -11,6 +11,9 @@ namespace KReenRegistration.Pages.Register
         {
         }
 
+        [BindProperty]
+        public PostViewModel PostModel { get; set; } = new();
+
         public IActionResult OnGet()
         {
             return Page();
