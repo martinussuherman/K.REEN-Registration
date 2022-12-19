@@ -1,6 +1,11 @@
 import flatpickr from "flatpickr";
 import HTMLElement from "flatpickr/dist/types/globals";
 
+type SelectData = {
+    kode: number,
+    nama: string
+};
+
 (function () {
     "use strict";
 
