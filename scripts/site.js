@@ -3,6 +3,7 @@ import flatpickr from "flatpickr";
     "use strict";
     let registerForm = document.getElementById("registerForm");
     addFormSubmitListener(registerForm, triggerInputChangeEvent);
+    radioInputAttachValidationHook();
     let today = new Date();
     let picker = flatpickr("#tanggalLahir", {
         altInput: true,
