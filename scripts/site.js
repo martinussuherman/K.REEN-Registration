@@ -1,4 +1,5 @@
 import flatpickr from "flatpickr";
+import axios from "axios";
 (function () {
     "use strict";
     let registerForm = document.getElementById("registerForm");
@@ -73,5 +74,25 @@ function radioInputAttachValidationHook() {
                 radioInputUpdateValidStatus(input);
             });
         }
+    });
+}
+function fetchSelectList(url, elementId, params) {
+    axios
+        .get(url, {
+        params: params
+    })
+        .then(function (response) {
+        let list = response.data;
+        let select = document.getElementById(elementId);
+        select.length = 1;
+        select.selectedIndex = 0;
+        list.map(item => select
+            .appendChild(new Option(item.nama, item.kode.toString()))
+            .cloneNode(true));
+    })
+        .catch(function (error) {
+        console.log(error);
+    })
+        .finally(function () {
     });
 }

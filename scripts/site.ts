@@ -1,5 +1,6 @@
 import flatpickr from "flatpickr";
 import HTMLElement from "flatpickr/dist/types/globals";
+import axios from "axios";
 
 type SelectData = {
     kode: number,
@@ -100,5 +101,29 @@ function radioInputAttachValidationHook() {
                     radioInputUpdateValidStatus(input);
                 });
             }
+        });
+}
+
+function fetchSelectList<T extends SelectData>(url: string, elementId: string, params?: any) {
+    axios
+        .get(
+            url,
+            {
+                params: params
+            })
+        .then(function (response) {
+            let list = response.data as T[];
+            let select = document.getElementById(elementId) as HTMLSelectElement;
+            select.length = 1;
+            select.selectedIndex = 0;
+
+            list.map(item => select
+                .appendChild(new Option(item.nama, item.kode.toString()))
+                .cloneNode(true));
+        })
+        .catch(function (error) {
+            console.log(error);
+        })
+        .finally(function () {
         });
 }
