@@ -39,7 +39,7 @@ function flatpickrUpdateValidStatus(
     currentDateString: string,
     self: flatpickr.Instance,
     data?: any) {
-    if (self.input.validity.valid) {
+    if (!self.input.required || self.selectedDates.length != 0) {
         self.input.classList.add("is-valid");
         self.input.classList.remove("is-invalid");
         self.altInput?.classList.add("is-valid");
