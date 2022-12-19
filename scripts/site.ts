@@ -79,3 +79,19 @@ function radioInputUpdateValidStatus(input: HTMLInputElement) {
     input.parentElement?.parentElement?.classList.add("is-invalid");
     input.parentElement?.parentElement?.classList.remove("is-valid");
 }
+
+function radioInputAttachValidationHook() {
+    let inputList = document.getElementsByClassName("form-check-input") as HTMLCollectionOf<HTMLInputElement>;
+
+    Array
+        .prototype
+        .slice
+        .call(inputList)
+        .forEach(function (input: HTMLInputElement) {
+            if (input.type == "radio") {
+                input.addEventListener("change", function (event) {
+                    radioInputUpdateValidStatus(input);
+                });
+            }
+        });
+}
