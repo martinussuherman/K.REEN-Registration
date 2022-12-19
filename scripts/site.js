@@ -8,6 +8,7 @@ import flatpickr from "flatpickr";
     let picker = flatpickr("#tanggalLahir", {
         altInput: true,
         onValueUpdate: flatpickrUpdateValidStatus,
+        onClose: flatpickrUpdateValidStatus,
         minDate: new Date(1940, 1, 1),
         maxDate: new Date(today.getFullYear() - 7, today.getMonth(), today.getDay())
     });
