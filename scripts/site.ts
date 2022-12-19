@@ -68,3 +68,14 @@ function triggerInputChangeEvent() {
             }
         });
 }
+
+function radioInputUpdateValidStatus(input: HTMLInputElement) {
+    if (input.validity.valid) {
+        input.parentElement?.parentElement?.classList.add("is-valid");
+        input.parentElement?.parentElement?.classList.remove("is-invalid");
+        return;
+    }
+
+    input.parentElement?.parentElement?.classList.add("is-invalid");
+    input.parentElement?.parentElement?.classList.remove("is-valid");
+}
