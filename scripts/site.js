@@ -96,3 +96,6 @@ function fetchSelectList(url, elementId, params) {
         .finally(function () {
     });
 }
+function fetchProvinsi() {
+    fetchSelectList("/api/List/Provinsi", "provinsi");
+}

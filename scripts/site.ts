@@ -127,3 +127,7 @@ function fetchSelectList<T extends SelectData>(url: string, elementId: string, p
         .finally(function () {
         });
 }
+
+function fetchProvinsi() {
+    fetchSelectList<SelectData>("/api/List/Provinsi", "provinsi");
+}
