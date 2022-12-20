@@ -86,3 +86,6 @@ function fetchSelectList(url, elementId, params) {
 function fetchProvinsi() {
     fetchSelectList("/api/List/Provinsi", "provinsi");
 }
+function fetchKabupatenKota(kodeProvinsi) {
+    fetchSelectList("/api/List/KabupatenKotaByProvinsi", "kabupatenKota", kodeProvinsi);
+}
