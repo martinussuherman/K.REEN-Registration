@@ -102,3 +102,12 @@ function fetchProvinsi() {
 function fetchKabupatenKota(kodeProvinsi) {
     fetchSelectList("/api/List/KabupatenKotaByProvinsi", "kabupatenKota", kodeProvinsi);
 }
+function selectProvinsiAttachChangeHook() {
+    let select = document.getElementById("provinsi");
+    select.addEventListener("change", function (event) {
+        let kodeProvinsi = parseInt(select.value);
+        if (kodeProvinsi != 0) {
+            fetchKabupatenKota({ kodeProvinsi: kodeProvinsi });
+        }
+    }, false);
+}
