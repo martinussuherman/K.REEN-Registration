@@ -13,6 +13,7 @@ type SelectData = {
     let registerForm = document.getElementById("registerForm") as HTMLFormElement;
     addFormSubmitListener(registerForm, triggerInputChangeEvent);
     radioInputAttachValidationHook();
+    selectProvinsiAttachChangeHook();
 
     let today = new Date();
     let picker = flatpickr(

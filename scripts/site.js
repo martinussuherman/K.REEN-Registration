@@ -5,6 +5,7 @@ import axios from "axios";
     let registerForm = document.getElementById("registerForm");
     addFormSubmitListener(registerForm, triggerInputChangeEvent);
     radioInputAttachValidationHook();
+    selectProvinsiAttachChangeHook();
     let today = new Date();
     let picker = flatpickr("#tanggalLahir", {
         altInput: true,
