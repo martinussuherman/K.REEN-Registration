@@ -22,7 +22,7 @@ type SelectData = {
             altInput: true,
             onValueUpdate: flatpickrUpdateValidStatus,
             onClose: flatpickrUpdateValidStatus,
-            minDate: new Date(1940, 1, 1),
+            minDate: new Date(today.getFullYear() - 90, today.getMonth(), today.getDay()),
             maxDate: new Date(today.getFullYear() - 7, today.getMonth(), today.getDay())
         });
 
