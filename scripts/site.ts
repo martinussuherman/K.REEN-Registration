@@ -25,6 +25,8 @@ type SelectData = {
             minDate: new Date(1940, 1, 1),
             maxDate: new Date(today.getFullYear() - 7, today.getMonth(), today.getDay())
         });
+
+    fetchProvinsi();
 })();
 
 function addFormSubmitListener(form: HTMLFormElement, hook?: () => void) {

@@ -14,6 +14,7 @@ import axios from "axios";
         minDate: new Date(1940, 1, 1),
         maxDate: new Date(today.getFullYear() - 7, today.getMonth(), today.getDay())
     });
+    fetchProvinsi();
 })();
 function addFormSubmitListener(form, hook) {
     form.addEventListener("submit", function (event) {
