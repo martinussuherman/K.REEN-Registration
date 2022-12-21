@@ -1,5 +1,6 @@
 import flatpickr from "flatpickr";
 import axios from "axios";
+import IMask from 'imask';
 (function () {
     "use strict";
     let registerForm = document.getElementById("registerForm");
@@ -112,4 +113,12 @@ function selectProvinsiAttachChangeHook() {
             fetchKabupatenKota({ kodeProvinsi: kodeProvinsi });
         }
     }, false);
+}
+function setPhoneMask() {
+    let input = document.getElementById("phone");
+    let phoneMask = IMask(input, {
+        mask: '+{62}-000-0000-00[000]',
+        lazy: false,
+        placeholderChar: '#'
+    });
 }

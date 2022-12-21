@@ -1,6 +1,7 @@
 import flatpickr from "flatpickr";
 import HTMLElement from "flatpickr/dist/types/globals";
 import axios from "axios";
+import IMask from 'imask';
 
 type SelectData = {
     kode: number,
@@ -149,4 +150,13 @@ function selectProvinsiAttachChangeHook() {
             fetchKabupatenKota({ kodeProvinsi: kodeProvinsi });
         }
     }, false);
+}
+
+function setPhoneMask() {
+    let input = document.getElementById("phone") as HTMLInputElement;
+    let phoneMask = IMask(input, {
+        mask: '+{62}-000-0000-00[000]',
+        lazy: false,
+        placeholderChar: '#'
+    });
 }
