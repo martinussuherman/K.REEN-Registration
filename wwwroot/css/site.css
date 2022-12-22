@@ -16,3 +16,8 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.form-group .form-check-inline {
+  padding-top: .375em;
+  padding-bottom: .375em;
+}
