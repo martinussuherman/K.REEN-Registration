@@ -121,6 +121,9 @@ function setPhoneMask() {
         lazy: false,
         placeholderChar: '#'
     });
+    phoneMask.on("accept", function () {
+        imaskUpdateValidStatus(phoneMask);
+    });
 }
 function imaskUpdateValidStatus(imask) {
     let element = imask.el;

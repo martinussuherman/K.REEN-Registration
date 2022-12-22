@@ -159,6 +159,10 @@ function setPhoneMask() {
         lazy: false,
         placeholderChar: '#'
     });
+
+    phoneMask.on("accept", function () {
+        imaskUpdateValidStatus(phoneMask);
+    });
 }
 
 function imaskUpdateValidStatus<T extends AnyMaskedOptions>(imask: IMask.InputMask<T>) {
