@@ -17,14 +17,14 @@ import IMask from 'imask';
     });
     fetchProvinsi();
 })();
-function addFormSubmitListener(form, hook) {
+function addFormSubmitListener(form, hook, inputMasks) {
     form.addEventListener("submit", function (event) {
         if (!form.checkValidity()) {
             event.preventDefault();
             event.stopPropagation();
         }
         if (hook != null) {
-            hook();
+            hook(inputMasks);
         }
         form.classList.add("was-validated");
     }, false);

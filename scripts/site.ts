@@ -30,7 +30,10 @@ type SelectData = {
     fetchProvinsi();
 })();
 
-function addFormSubmitListener(form: HTMLFormElement, hook?: () => void) {
+function addFormSubmitListener<T extends AnyMaskedOptions>(
+    form: HTMLFormElement,
+    hook?: (inputMasks?: IMask.InputMask<T>[]) => void,
+    inputMasks?: IMask.InputMask<T>[]) {
     form.addEventListener("submit", function (event) {
         if (!form.checkValidity()) {
             event.preventDefault();
@@ -38,7 +41,7 @@ function addFormSubmitListener(form: HTMLFormElement, hook?: () => void) {
         }
 
         if (hook != null) {
-            hook();
+            hook(inputMasks);
         }
 
         form.classList.add("was-validated");
