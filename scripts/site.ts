@@ -1,7 +1,7 @@
 import flatpickr from "flatpickr";
 import HTMLElement from "flatpickr/dist/types/globals";
 import axios from "axios";
-import IMask from 'imask';
+import IMask, { AnyMaskedOptions, HTMLMaskElement } from 'imask';
 
 type SelectData = {
     kode: number,
@@ -159,4 +159,24 @@ function setPhoneMask() {
         lazy: false,
         placeholderChar: '#'
     });
+}
+
+function imaskUpdateValidStatus<T extends AnyMaskedOptions>(imask: IMask.InputMask<T>) {
+    let element = imask.el as HTMLMaskElement;
+    let input = element.input as HTMLInputElement;
+
+    if (imask.masked.isComplete) {
+        input.parentElement?.classList.add("is-valid");
+        input.parentElement?.classList.remove("is-invalid");
+        input.classList.add("is-valid");
+        input.classList.remove("is-invalid");
+        input.setCustomValidity("");
+        return;
+    }
+
+    input.parentElement?.classList.add("is-invalid");
+    input.parentElement?.classList.remove("is-valid");
+    input.classList.add("is-invalid");
+    input.classList.remove("is-valid");
+    input.setCustomValidity("Error");
 }

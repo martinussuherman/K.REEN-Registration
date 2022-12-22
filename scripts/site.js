@@ -122,3 +122,20 @@ function setPhoneMask() {
         placeholderChar: '#'
     });
 }
+function imaskUpdateValidStatus(imask) {
+    let element = imask.el;
+    let input = element.input;
+    if (imask.masked.isComplete) {
+        input.parentElement?.classList.add("is-valid");
+        input.parentElement?.classList.remove("is-invalid");
+        input.classList.add("is-valid");
+        input.classList.remove("is-invalid");
+        input.setCustomValidity("");
+        return;
+    }
+    input.parentElement?.classList.add("is-invalid");
+    input.parentElement?.classList.remove("is-valid");
+    input.classList.add("is-invalid");
+    input.classList.remove("is-valid");
+    input.setCustomValidity("Error");
+}
