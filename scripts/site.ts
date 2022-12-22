@@ -67,9 +67,13 @@ function flatpickrUpdateValidStatus(
     self.altInput?.classList.remove("is-valid");
 }
 
-function triggerInputChangeEvent() {
+function triggerInputChangeEvent<T extends AnyMaskedOptions>(inputMasks?: IMask.InputMask<T>[]) {
     let picker = (document.getElementById("tanggalLahir") as HTMLElement)._flatpickr;
     picker?.updateValue(true);
+
+    inputMasks?.forEach(function (input: IMask.InputMask<T>) {
+        imaskUpdateValidStatus(input);
+    });
 
     let inputList = document.getElementsByClassName("form-check-input") as HTMLCollectionOf<HTMLInputElement>;
 

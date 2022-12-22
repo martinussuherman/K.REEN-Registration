@@ -26,9 +26,12 @@ function flatpickrUpdateValidStatus(dates, currentDateString, self, data) {
     self.altInput?.classList.add("is-invalid");
     self.altInput?.classList.remove("is-valid");
 }
-function triggerInputChangeEvent() {
+function triggerInputChangeEvent(inputMasks) {
     let picker = document.getElementById("tanggalLahir")._flatpickr;
     picker?.updateValue(true);
+    inputMasks?.forEach(function (input) {
+        imaskUpdateValidStatus(input);
+    });
     let inputList = document.getElementsByClassName("form-check-input");
     Array
         .prototype
