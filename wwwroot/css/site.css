@@ -21,3 +21,8 @@ body {
   padding-top: .375em;
   padding-bottom: .375em;
 }
+
+#site-logo img {
+  width: 120px;
+}
+
