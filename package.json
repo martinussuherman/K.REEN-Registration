@@ -5,6 +5,7 @@
    "devDependencies": {
       "@types/jquery": "^3.5.5",
       "axios": "^1.2.1",
-      "flatpickr": "^4.6.13"
+      "flatpickr": "^4.6.13",
+      "imask": "^6.4.3"
    }
 }
