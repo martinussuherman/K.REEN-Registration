@@ -12,7 +12,7 @@ type SelectData = {
     "use strict";
 
     let registerForm = document.getElementById("registerForm") as HTMLFormElement;
-    addFormSubmitListener(registerForm, triggerInputChangeEvent, [setPhoneMask()]);
+    addFormSubmitListener(registerForm, triggerInputChangeEvent, [initPhoneMaskInput()]);
     radioInputAttachValidationHook();
     selectProvinsiAttachChangeHook();
 
@@ -159,7 +159,7 @@ function selectProvinsiAttachChangeHook() {
     }, false);
 }
 
-function setPhoneMask() {
+function initPhoneMaskInput() {
     let input = document.getElementById("phone") as HTMLInputElement;
     let phoneMask = IMask(input, {
         mask: '+{62}-000-0000-00[000]',

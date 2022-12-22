@@ -4,7 +4,7 @@ import IMask from 'imask';
 (function () {
     "use strict";
     let registerForm = document.getElementById("registerForm");
-    addFormSubmitListener(registerForm, triggerInputChangeEvent, [setPhoneMask()]);
+    addFormSubmitListener(registerForm, triggerInputChangeEvent, [initPhoneMaskInput()]);
     radioInputAttachValidationHook();
     selectProvinsiAttachChangeHook();
     let today = new Date();
@@ -117,7 +117,7 @@ function selectProvinsiAttachChangeHook() {
         }
     }, false);
 }
-function setPhoneMask() {
+function initPhoneMaskInput() {
     let input = document.getElementById("phone");
     let phoneMask = IMask(input, {
         mask: '+{62}-000-0000-00[000]',
