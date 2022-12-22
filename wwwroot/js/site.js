@@ -108,6 +108,7 @@ function setPhoneMask() {
     phoneMask.on("accept", function () {
         imaskUpdateValidStatus(phoneMask);
     });
+    return phoneMask;
 }
 function imaskUpdateValidStatus(imask) {
     let element = imask.el;

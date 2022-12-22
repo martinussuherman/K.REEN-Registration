@@ -163,6 +163,8 @@ function setPhoneMask() {
     phoneMask.on("accept", function () {
         imaskUpdateValidStatus(phoneMask);
     });
+
+    return phoneMask;
 }
 
 function imaskUpdateValidStatus<T extends AnyMaskedOptions>(imask: IMask.InputMask<T>) {
