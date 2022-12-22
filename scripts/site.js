@@ -4,7 +4,7 @@ import IMask from 'imask';
 (function () {
     "use strict";
     let registerForm = document.getElementById("registerForm");
-    addFormSubmitListener(registerForm, triggerInputChangeEvent);
+    addFormSubmitListener(registerForm, triggerInputChangeEvent, [setPhoneMask()]);
     radioInputAttachValidationHook();
     selectProvinsiAttachChangeHook();
     let today = new Date();

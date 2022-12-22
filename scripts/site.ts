@@ -12,7 +12,7 @@ type SelectData = {
     "use strict";
 
     let registerForm = document.getElementById("registerForm") as HTMLFormElement;
-    addFormSubmitListener(registerForm, triggerInputChangeEvent);
+    addFormSubmitListener(registerForm, triggerInputChangeEvent, [setPhoneMask()]);
     radioInputAttachValidationHook();
     selectProvinsiAttachChangeHook();
 
