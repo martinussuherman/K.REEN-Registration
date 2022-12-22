@@ -7,8 +7,10 @@ namespace KReenRegistration.Pages.Register
 {
     public class IndexModel : PageModel
     {
-        public IndexModel()
+        public IndexModel(KreenContext context, IMapper mapper)
         {
+            _context = context;
+            _mapper = mapper;
         }
 
         [BindProperty]
@@ -41,5 +43,8 @@ namespace KReenRegistration.Pages.Register
             public ushort KodeKabupatenKota { get; set; }
             public string KodePos { get; set; } = string.Empty;
         }
+
+        private readonly KreenContext _context;
+        private readonly IMapper _mapper;
     }
 }
