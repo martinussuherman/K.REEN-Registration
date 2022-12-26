@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace KReenRegistration.Pages.Register
+namespace KReenRegistration.Pages.Kontak
 {
     public class IndexModel : PageModel
     {
