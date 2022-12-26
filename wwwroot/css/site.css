@@ -26,3 +26,7 @@ body {
   width: 120px;
 }
 
+.form-check-label.consent{
+  text-align: justify;
+}
+
