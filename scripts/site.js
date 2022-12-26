@@ -129,6 +129,18 @@ function initPhoneMaskInput() {
     });
     return phoneMask;
 }
+function initPostalCodeMaskInput() {
+    let input = document.getElementById("postalCode");
+    let postalMask = IMask(input, {
+        mask: '00000',
+        lazy: false,
+        placeholderChar: '#'
+    });
+    postalMask.on("accept", function () {
+        imaskUpdateValidStatus(postalMask);
+    });
+    return postalMask;
+}
 function imaskUpdateValidStatus(imask) {
     let element = imask.el;
     let input = element.input;

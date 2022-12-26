@@ -174,6 +174,21 @@ function initPhoneMaskInput() {
     return phoneMask;
 }
 
+function initPostalCodeMaskInput() {
+    let input = document.getElementById("postalCode") as HTMLInputElement;
+    let postalMask = IMask(input, {
+        mask: '00000',
+        lazy: false,
+        placeholderChar: '#'
+    });
+
+    postalMask.on("accept", function () {
+        imaskUpdateValidStatus(postalMask);
+    });
+
+    return postalMask;
+}
+
 function imaskUpdateValidStatus<T extends AnyMaskedOptions>(imask: IMask.InputMask<T>) {
     let element = imask.el as HTMLMaskElement;
     let input = element.input as HTMLInputElement;
