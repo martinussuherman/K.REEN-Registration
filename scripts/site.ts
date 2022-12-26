@@ -196,7 +196,7 @@ function imaskUpdateValidStatus<T extends AnyMaskedOptions>(imask: IMask.InputMa
     let element = imask.el as HTMLMaskElement;
     let input = element.input as HTMLInputElement;
 
-    if (imask.masked.isComplete) {
+    if (imask.masked.isComplete || !input.required) {
         input.parentElement?.classList.add("is-valid");
         input.parentElement?.classList.remove("is-invalid");
         input.classList.add("is-valid");

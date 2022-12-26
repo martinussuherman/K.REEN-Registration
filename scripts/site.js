@@ -144,7 +144,7 @@ function initPostalCodeMaskInput() {
 function imaskUpdateValidStatus(imask) {
     let element = imask.el;
     let input = element.input;
-    if (imask.masked.isComplete) {
+    if (imask.masked.isComplete || !input.required) {
         input.parentElement?.classList.add("is-valid");
         input.parentElement?.classList.remove("is-invalid");
         input.classList.add("is-valid");
