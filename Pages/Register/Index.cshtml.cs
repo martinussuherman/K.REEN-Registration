@@ -2,6 +2,7 @@ using AutoMapper;
 using KReenRegistration.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 
 namespace KReenRegistration.Pages.Register
 {
@@ -21,11 +22,23 @@ namespace KReenRegistration.Pages.Register
             return Page();
         }
 
-        public IActionResult OnPost()
+        public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
             {
                 return Page();
+            }
+
+            DataKontak item = _mapper.Map<PostViewModel, DataKontak>(PostModel);
+            _context.DataKontak.Add(item);
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateException)
+            {
+                throw;
             }
 
             return Page();
