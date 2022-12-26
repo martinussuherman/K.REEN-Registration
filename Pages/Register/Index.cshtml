@@ -7,7 +7,7 @@
 
 <div class="card-body mt-5">
    <form method="post" class="row g-3 needs-validation" id="registerForm" novalidate>
-      <div class="col-md-6">
+      <div class="col-md-8">
          <label class="form-label">Nama Lengkap</label>
          <input class="form-control" type="text" asp-for="PostModel.Nama" required>
 
@@ -20,7 +20,7 @@
          </div>
       </div>
 
-      <div class="col-md-6">
+      <div class="col-md-4">
          <div class="input">
             <label class="form-label">Nomor HP</label>
             <input class="form-control" type="tel" asp-for="PostModel.NomorHp" id="phone" required>
@@ -48,7 +48,7 @@
          </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-5">
          <label class="form-label">Email</label>
          <input class="form-control"  type="email" asp-for="PostModel.Email" required>
 
@@ -61,7 +61,7 @@
          </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-3">
          <label class="form-label">Jenis Kelamin</label>
 
          <div class="form-group">
@@ -98,7 +98,7 @@
          </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-5">
          <label class="form-label">Provinsi</label>
 
          <select class="form-select" asp-for="PostModel.KodeProvinsi" id="provinsi" required>
@@ -114,7 +114,7 @@
          </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-5">
          <label class="form-label">Kabupaten/Kota</label>
 
          <select class="form-select" asp-for="PostModel.KodeKabupatenKota" id="kabupatenKota" required>
@@ -130,7 +130,7 @@
          </div>
       </div>
 
-      <div class="col-md-4">
+      <div class="col-md-2">
          <label class="form-label">Kode Pos</label>
          <input class="form-control" type="text" asp-for="PostModel.KodePos" required>
 
