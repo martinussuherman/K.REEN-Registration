@@ -10,6 +10,7 @@
         public string JenisKelamin { get; set; } = string.Empty;
         public string Alamat { get; set; } = string.Empty;
         public ushort KodeKabupatenKota { get; set; }
+        public string KabupatenKota { get; set; } = string.Empty;
         public string KodePos { get; set; } = string.Empty;
     }
 }
