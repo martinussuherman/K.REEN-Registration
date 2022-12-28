@@ -17,6 +17,10 @@ namespace KReenRegistration.Misc
             CreateMap<Provinsi, ProvinsiView>();
             CreateMap<KabupatenKota, KabupatenKotaView>();
             CreateMap<Pages.Kontak.IndexModel.PostViewModel, DataKontak>();
+            CreateMap<DataKontak, DataKontakView>()
+                .ForMember(
+                    dto => dto.KabupatenKota,
+                    opt => opt.MapFrom(src => src.KabupatenKotaNavigation!.Nama));
         }
     }
 }
