@@ -2,6 +2,7 @@ using AutoMapper;
 using AutoMapper.QueryableExtensions;
 using KReenRegistration.Models;
 using KReenRegistration.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -46,6 +47,20 @@ namespace KReenRegistration.Controllers
                 .Where(k => k.KodeProvinsi == kodeProvinsi)
                 .AsNoTracking()
                 .ProjectTo<KabupatenKotaView>(_mapper.ConfigurationProvider)
+                .ToListAsync();
+        }
+
+        [Authorize]
+        [HttpGet(nameof(DataKontak))]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        public async Task<List<DataKontakView>> DataKontak()
+        {
+            return await _context.DataKontak
+                .Include(e => e.KabupatenKotaNavigation)
+                .AsNoTracking()
+                .ProjectTo<DataKontakView>(_mapper.ConfigurationProvider)
                 .ToListAsync();
         }
 
